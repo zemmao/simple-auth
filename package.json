@@ -1,0 +1,52 @@
+{
+  "name": "simple-auth",
+  "version": "1.0.0",
+  "description": "Simple auth",
+  "main": "index.js",
+  "scripts": {
+    "db": "node ./server/script/sequelize",
+    "db:create": "npm run db create",
+    "db:reset": "npm run db drop && npm run db create",
+    "dev:client": "poi",
+    "dev:server": "nodemon --exec \"node -r dotenv/config\" ./server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "node-sass": "^4.9.3",
+    "poi": "^10.2.10",
+    "sass-loader": "^7.1.0",
+    "sequelize-cli": "^4.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "bulma": "^0.7.1",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "emailjs": "^2.2.0",
+    "express": "^4.16.3",
+    "express-async-errors": "^3.0.0",
+    "helmet": "^3.13.0",
+    "http-errors": "^1.7.0",
+    "http-status": "^1.2.0",
+    "humanize-string": "^1.0.2",
+    "jsend": "^1.0.2",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.0",
+    "umzug": "^2.1.0",
+    "vee-validate": "^2.1.0-beta.8",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vue-visible": "^1.0.2",
+    "vuex": "^3.0.1"
+  }
+}

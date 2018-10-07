@@ -1,0 +1,8 @@
+# Dependencies
+node_modules
+
+#Configuration
+.env
+
+# General
+.DS_Store
