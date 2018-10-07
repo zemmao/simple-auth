@@ -7,6 +7,7 @@ import Login from '@/components/Login';
 import Registration from '@/components/Registration';
 import ResetEmail from '@/components/ResetEmail';
 import ResetPassword from '@/components/ResetPassword';
+import Welcome from '@/components/Welcome';
 
 Vue.use(Router);
 
@@ -26,7 +27,11 @@ const router = new Router({
   }, {
     path: '/reset-email',
     name: 'reset-email',
-    component: ResetEmail,
+    component: ResetEmail
+  }, {
+    path: '/welcome',
+    name: 'welcome',
+    component: Welcome,
     meta: { auth: true }
   }]
 });

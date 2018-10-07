@@ -1,6 +1,5 @@
 <template>
   <div>
-    <navbar></navbar>
     <div v-if="error" class="notification is-error">
       <span>{{ error }}</span>
     </div>
@@ -11,9 +10,12 @@
         name="email"
         validate="required|email|max: 255|unique-email">
       </v-input>
-      <button class="button is-primary" type="submit">
-        Reset email
-      </button>
+      <div class="options">
+        <button class="button is-primary" type="submit">
+          Reset email
+        </button>
+        <router-link :to="{ name: 'login' }">Back</router-link>
+      </div>
     </form>
   </div>
 </template>
@@ -22,7 +24,6 @@
 import { mapActions, mapState } from 'vuex';
 import { withValidation } from '@/validation';
 import isEmpty from 'lodash/isEmpty';
-import Navbar from '@/components/common/Navbar';
 import request from '@/api/request';
 import VInput from '@/components/common/form/VInput';
 
@@ -59,6 +60,18 @@ export default {
       }
     });
   },
-  components: { Navbar, VInput }
+  components: { VInput }
 };
 </script>
+
+<style lang="scss" scoped>
+.options {
+  padding: 5px 0 10px 0;
+  text-align: right;
+
+  a {
+    display: inline-block;
+    padding: 6px 20px;
+  }
+}
+</style>

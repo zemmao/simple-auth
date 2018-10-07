@@ -18,6 +18,7 @@
         validate="required">
       </v-input>
       <div class="options">
+        <router-link :to="{ name: 'reset-email' }">Forgot password?</router-link>
         <router-link :to="{ name: 'registration' }">
           Register
         </router-link>
@@ -52,7 +53,7 @@ export default {
       this.$validator.validateAll().then(isValid => {
         if (!isValid) return;
         this.login(pick(this, ['email', 'password']))
-          .then(() => this.$router.push({ name: 'reset-email' }))
+          .then(() => this.$router.push({ name: 'welcome' }))
           .catch(() => (this.error = LOGIN_ERR_MESSAGE));
       });
     }
