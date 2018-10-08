@@ -26,7 +26,7 @@ function login({ body }, res) {
     .then(user => user || createError(NOT_FOUND, 'Wrong password!'))
     .then(user => {
       const token = user.createToken({ expiresIn: '5 days' });
-      res.jsend.success({token, user: user.profile });
+      res.jsend.success({ token, user: user.profile });
     });
 }
 

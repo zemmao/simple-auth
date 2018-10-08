@@ -41,13 +41,13 @@ export default {
   methods: {
     ...mapActions(['register']),
     submit() {
-        this.$validator.validateAll().then(isValid => {
-          if (!isValid) return;
-          return this.register({ username: this.username, email: this.email })
-            .then(() => this.$router.push({ name: 'login' }))
-            .catch(() => (this.error = 'An error has occurred!'));
+      this.$validator.validateAll().then(isValid => {
+        if (!isValid) return;
+        return this.register({ username: this.username, email: this.email })
+          .then(() => this.$router.push({ name: 'login' }))
+          .catch(() => (this.error = 'An error has occurred!'));
       });
-    },
+    }
   },
   mounted() {
     if (this.$validator.rules['unique-email']) return;

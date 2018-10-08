@@ -41,14 +41,14 @@ export default {
   methods: {
     ...mapActions(['resetEmail', 'logout']),
     submit() {
-        this.$validator.validateAll().then(isValid => {
-          if (!isValid) return;
-          const { email: newEmail, user: { email: oldEmail } } = this;
-          return this.resetEmail({ newEmail, oldEmail })
-            .then(() => this.logout())
-            .catch(err => (this.error = 'An error has occurred!'));
+      this.$validator.validateAll().then(isValid => {
+        if (!isValid) return;
+        const { email: newEmail, user: { email: oldEmail } } = this;
+        return this.resetEmail({ newEmail, oldEmail })
+          .then(() => this.logout())
+          .catch(() => (this.error = 'An error has occurred!'));
       });
-    },
+    }
   },
   mounted() {
     if (this.$validator.rules['unique-email']) return;

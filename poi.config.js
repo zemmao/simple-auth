@@ -7,7 +7,11 @@ const aliases = {
 };
 
 module.exports = () => ({
+  presets: [
+    require('poi-preset-eslint')({ mode: '*' })
+  ],
   entry: './client/main.js',
+  generateStats: true,
   port: 8081,
   extendWebpack(config) {
     config.resolve.alias.merge(aliases);

@@ -1,8 +1,10 @@
 import axios from 'axios';
 const { UNAUTHORIZED } = require('http-status');
 
+const BASE_URL = '/api/v1';
+
 const client = axios.create({
-  baseURL: process.env.SERVER_ENDPOINT,
+  baseURL: BASE_URL,
   headers: { 'Content-Type': 'application/json' }
 });
 
